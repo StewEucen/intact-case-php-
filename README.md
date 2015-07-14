@@ -30,10 +30,10 @@ If you want to see more information, please see [IntactCase](http://lab.kochlein
 
 You can test this library on a browser.
 
-1. Open [/test/test.html](https://github.com/StewEucen/intact-case-js-/blob/master/test/test.html) on a browser.
+1. Open [/test/test.html](https://github.com/StewEucen/intact-case-php-/blob/master/test/test.php) on a browser.
 2. See console in a developer tools of each browser.
 
-If you want to test other cases, edit [/test/js/intact_case_test.js](https://github.com/StewEucen/intact-case-js-/blob/master/test/js/intact_case_test.js) and run.
+If you want to test other cases, edit [/test/js/intact_case_test.js](https://github.com/StewEucen/intact-case-php-/blob/master/test/intact_case_test.php) and run.
 
 ## Link
 
