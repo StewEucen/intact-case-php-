@@ -31,7 +31,7 @@ If you want to see more information, please see [IntactCase](http://lab.kochlein
 You can test this library on a browser.
 
 1. Open [/test/test.php](https://github.com/StewEucen/intact-case-php-/blob/master/test/test.php) on a browser.
-2. See console in a developer tools of each browser.
+2. View result of test cases.
 
 If you want to test other cases, edit [/test/intact_case_test.php](https://github.com/StewEucen/intact-case-php-/blob/master/test/intact_case_test.php) and run.
 
