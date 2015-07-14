@@ -17,6 +17,8 @@
  * @since      File available since Release 1.0.0
  * @version    Release 1.0.0
  */
+require '../src/intact_case.php';
+
 use StewEucen\Acts\IntactCase;
 
 // c  = camelCase
@@ -285,37 +287,37 @@ function _check($got, $right) {
 }
 
 $testCases = [
- "snake_case >> camelCase"   => function($info) {return _check(StewEucen\Acts\IntactCase::camelize($info['d']), $info['c']);},
- "snake_case >> StudlyCaps"  => function($info) {return _check(StewEucen\Acts\IntactCase::studlyCaps($info['d']), $info['s']);},
- "camelCase >> snake_case"   => function($info) {return _check(StewEucen\Acts\IntactCase::delimiterize($info['c']), $info['d']);},
- "StudlyCaps >> snake_case"  => function($info) {return _check(StewEucen\Acts\IntactCase::delimiterize($info['s']), $info['d']);},
- "camelCase >> _snake_case"  => function($info) {return _check(StewEucen\Acts\IntactCase::delimiterize($info['c'], '_', true), $info['d']);},
- "StudlyCaps >> _snake_case" => function($info) {return _check(StewEucen\Acts\IntactCase::delimiterize($info['s'], '_', true), $info['vd']);},
- "camelCase >> chain-case"   => function($info) {return _check(StewEucen\Acts\IntactCase::hyphenated($info['ch']), $info['dh']);},
- "StudlyCaps >> chain-case"  => function($info) {return _check(StewEucen\Acts\IntactCase::hyphenated($info['sh']), $info['dh']);},
- "camelCase >> -chain-case"  => function($info) {return _check(StewEucen\Acts\IntactCase::hyphenated($info['ch']), $info['dh']);},
- "StudlyCaps >> -chain-case" => function($info) {return _check(StewEucen\Acts\IntactCase::hyphenated($info['sh']), $info['dh']);},
+ "snake_case >> camelCase"   => function($info) {return _check(IntactCase::camelize($info['d']), $info['c']);},
+ "snake_case >> StudlyCaps"  => function($info) {return _check(IntactCase::studlyCaps($info['d']), $info['s']);},
+ "camelCase >> snake_case"   => function($info) {return _check(IntactCase::delimiterize($info['c']), $info['d']);},
+ "StudlyCaps >> snake_case"  => function($info) {return _check(IntactCase::delimiterize($info['s']), $info['d']);},
+ "camelCase >> _snake_case"  => function($info) {return _check(IntactCase::delimiterize($info['c'], '_', true), $info['d']);},
+ "StudlyCaps >> _snake_case" => function($info) {return _check(IntactCase::delimiterize($info['s'], '_', true), $info['vd']);},
+ "camelCase >> chain-case"   => function($info) {return _check(IntactCase::hyphenated($info['ch']), $info['dh']);},
+ "StudlyCaps >> chain-case"  => function($info) {return _check(IntactCase::hyphenated($info['sh']), $info['dh']);},
+ "camelCase >> -chain-case"  => function($info) {return _check(IntactCase::hyphenated($info['ch']), $info['dh']);},
+ "StudlyCaps >> -chain-case" => function($info) {return _check(IntactCase::hyphenated($info['sh']), $info['dh']);},
 
- "Tokenize camelCase"                => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['c']), preg_match('/[A-Z]/', $info['c']) ? $info['ts'] : $info['tc']);},
- "Tokenize camelCase as raw first"   => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['c'], '_', true), $info['tc']);},
- "Tokenize StudlyCaps"               => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['s']), $info['ts']);},
- "Tokenize StudlyCaps as raw first"  => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['s'], '_', true), $info['ts']);},
- "Tokenize snake_case"               => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['d']), $info['td']);},
- "Tokenize _snake_case"              => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['d']), $info['td']);},
- "Tokenize snake_case as raw first"  => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['d'], '_', true), $info['td']);},
- "Tokenize _snake_case as raw first" => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['vd'], '_', true), $info['td']);},
- "Tokenize chain-case"               => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['dh'], "-"), $info['th']);},
- "Tokenize -chain-case"              => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['vh'], "-"), $info['th']);},
- "Tokenize chain-case as raw first"  => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['dh'], "-", true), $info['th']);},
- "Tokenize -chain-case as raw first" => function($info) {return _check(StewEucen\Acts\IntactCase::tokenize($info['vh'], "-", true), $info['th']);},
+ "Tokenize camelCase"                => function($info) {return _check(IntactCase::tokenize($info['c']), preg_match('/[A-Z]/', $info['c']) ? $info['ts'] : $info['tc']);},
+ "Tokenize camelCase as raw first"   => function($info) {return _check(IntactCase::tokenize($info['c'], '_', true), $info['tc']);},
+ "Tokenize StudlyCaps"               => function($info) {return _check(IntactCase::tokenize($info['s']), $info['ts']);},
+ "Tokenize StudlyCaps as raw first"  => function($info) {return _check(IntactCase::tokenize($info['s'], '_', true), $info['ts']);},
+ "Tokenize snake_case"               => function($info) {return _check(IntactCase::tokenize($info['d']), $info['td']);},
+ "Tokenize _snake_case"              => function($info) {return _check(IntactCase::tokenize($info['d']), $info['td']);},
+ "Tokenize snake_case as raw first"  => function($info) {return _check(IntactCase::tokenize($info['d'], '_', true), $info['td']);},
+ "Tokenize _snake_case as raw first" => function($info) {return _check(IntactCase::tokenize($info['vd'], '_', true), $info['td']);},
+ "Tokenize chain-case"               => function($info) {return _check(IntactCase::tokenize($info['dh'], "-"), $info['th']);},
+ "Tokenize -chain-case"              => function($info) {return _check(IntactCase::tokenize($info['vh'], "-"), $info['th']);},
+ "Tokenize chain-case as raw first"  => function($info) {return _check(IntactCase::tokenize($info['dh'], "-", true), $info['th']);},
+ "Tokenize -chain-case as raw first" => function($info) {return _check(IntactCase::tokenize($info['vh'], "-", true), $info['th']);},
 
- "Compound from tokens of camelCase"  => function($info) {return _check(StewEucen\Acts\IntactCase::compound($info['tc']), $info['c']);},
- "Compound from tokens of StudlyCaps" => function($info) {return _check(StewEucen\Acts\IntactCase::compound($info['ts']), $info['s']);},
- "Compound from tokens of snake_case" => function($info) {return _check(StewEucen\Acts\IntactCase::compound($info['td']), $info['d']);},
- "Compound from tokens of chain-case" => function($info) {return _check(StewEucen\Acts\IntactCase::compound($info['th'], "-"), $info['dh']);},
+ "Compound from tokens of camelCase"  => function($info) {return _check(IntactCase::compound($info['tc']), $info['c']);},
+ "Compound from tokens of StudlyCaps" => function($info) {return _check(IntactCase::compound($info['ts']), $info['s']);},
+ "Compound from tokens of snake_case" => function($info) {return _check(IntactCase::compound($info['td']), $info['d']);},
+ "Compound from tokens of chain-case" => function($info) {return _check(IntactCase::compound($info['th'], "-"), $info['dh']);},
 
- "Capitalize first word'"  => function($info) {return _check(StewEucen\Acts\IntactCase::ucFirst($info['c']), $info['s']);},
- "Uncapitalize first word" => function($info) {return _check(StewEucen\Acts\IntactCase::lcFirst($info['s']), $info['c']);},
+ "Capitalize first word'"  => function($info) {return _check(IntactCase::ucFirst($info['c']), $info['s']);},
+ "Uncapitalize first word" => function($info) {return _check(IntactCase::lcFirst($info['s']), $info['c']);},
 ];
 
 $errors = [];

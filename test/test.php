@@ -14,9 +14,6 @@
  * @since     File available since Release 1.0.0
  * @version   1.0.0
  */
-require '../src/intact_case.php';
-
-use StewEucen\Acts\IntactCase;
 ?>
 <!DOCTYPE html>
 <html lang="en">
