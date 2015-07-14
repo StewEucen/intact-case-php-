@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// +--------------------------------------------------------------------------------------------+ //
+// Intact Case Version
+//
+// Holds a static string representing the current version of Intact Case
+//
+// Intact Case : The Natural Mutual Conversion for camelCase and snake_case
+// Copyright (c) 2015 Stew Eucen (http://lab.kochlein.com)
+//
+// Licensed under The MIT License
+// Redistributions of files must retain the above copyright notice.
+//
+// @copyright     Copyright (c) 2015 Stew Eucen
+// @link          http://lab.kochlein.com/IntactCase
+// @license       http://www.opensource.org/licenses/mit-license.php MIT License
+// +--------------------------------------------------------------------------------------------+ //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+1.0.0
