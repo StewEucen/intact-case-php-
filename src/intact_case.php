@@ -15,7 +15,7 @@
  * @package    StewEucen\Acts
  * @subpackage -
  * @since      File available since Release 1.0.0
- * @version    Release 1.0.0
+ * @version    Release 1.0.1
  */
 namespace StewEucen\Acts;
 
@@ -135,8 +135,8 @@ class IntactCase
     $afterAcronym  = '[A-Z]{2,}(?![a-z])';
     $beforeCapital = '(?!^)(?=[A-Z][a-z])';
 
-    $p = "/{$headDelimiter}({$beforeAcronym}|{$afterAcronym}|{$beforeCapital})/";
-    return strtolower(preg_replace($p, '$1' . $delimiter, $haystack));
+    $p = "/{$headDelimiter}{$beforeAcronym}|{$afterAcronym}|{$beforeCapital}/";
+    return strtolower(preg_replace($p, '$0' . $delimiter, $haystack));
   }
 
   /**
